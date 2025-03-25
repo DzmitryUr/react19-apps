@@ -1,3 +1,4 @@
+import { ContactForm } from '~/components/ContactForm';
 import type { Route } from './+types/home';
 import { NavBar } from '~/components/NavBar';
 
@@ -12,8 +13,7 @@ export default function Contact() {
   return (
     <div className="flex flex-col items-center p-5">
       <NavBar />
-      <h2 className="font-bold p-5">Contact</h2>
-      <p>This is Contact Page</p>
+      <ContactForm />
     </div>
   );
 }
