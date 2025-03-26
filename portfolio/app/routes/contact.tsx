@@ -13,6 +13,7 @@ export default function Contact() {
   return (
     <div className="flex flex-col items-center p-5">
       <NavBar />
+      <h2 className="font-bold p-5">Contact Us</h2>
       <ContactForm />
     </div>
   );
