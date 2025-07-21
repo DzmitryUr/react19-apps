@@ -1,0 +1,48 @@
+.text-box {
+  display: flex;
+  background-color: #eee;
+  border-radius: 20px;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.text-box input[type='text'] {
+  flex: 1;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 1rem 0;
+  font-size: 1.3rem;
+}
+
+button {
+  padding: 0.7rem 1.5rem;
+  background-color: #0090ff;
+  color: #fff;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0000ff;
+}
+
+.extra-box {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.output-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+input[type='color'] {
+  margin-top: 1rem;
+}
