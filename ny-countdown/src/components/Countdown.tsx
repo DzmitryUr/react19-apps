@@ -15,7 +15,6 @@ interface TimeLeft {
  */
 export default function Countdown() {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
-  const [isCelebrating, setIsCelebrating] = useState(false);
 
   /**
    * Calculates the time remaining until January 1, 2026 00:00:00
@@ -43,27 +42,10 @@ export default function Countdown() {
     const timer = setInterval(() => {
       const time = calculateTimeLeft();
       setTimeLeft(time);
-
-      if (time.total === 0) {
-        setIsCelebrating(true);
-      }
     }, 1000);
 
     return () => clearInterval(timer);
   }, []);
-
-  if (isCelebrating) {
-    return (
-      <div className="celebration">
-        <h1>🎉 Happy New Year 2026! 🎊</h1>
-        <div className="fireworks">
-          <div className="firework"></div>
-          <div className="firework"></div>
-          <div className="firework"></div>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="countdown-container">
@@ -86,7 +68,7 @@ export default function Countdown() {
           <span className="time-label">Seconds</span>
         </div>
       </div>
-      <p className="message">Until the New Year! 🎆</p>
+      <p className="message">Until the New Year!</p>
     </div>
   );
 }
