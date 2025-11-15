@@ -1,0 +1,223 @@
+.countdown-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  50% {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  }
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+  text-align: center;
+  margin-bottom: 3rem;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  max-width: 800px;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.time-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.time-box:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.time-value {
+  font-size: 4rem;
+  font-weight: 900;
+  color: white;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.time-label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.message {
+  font-size: 1.8rem;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Celebration styles */
+.celebration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.celebration h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  color: white;
+  text-align: center;
+  z-index: 10;
+  animation: celebrate 2s ease-in-out infinite;
+  text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes celebrate {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.1) rotate(-5deg);
+  }
+  75% {
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+.fireworks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.firework {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.8);
+  animation: explode 2s ease-out infinite;
+}
+
+.firework:nth-child(1) {
+  top: 20%;
+  left: 30%;
+  animation-delay: 0s;
+  background: #ff6b6b;
+}
+
+.firework:nth-child(2) {
+  top: 40%;
+  left: 70%;
+  animation-delay: 0.7s;
+  background: #4ecdc4;
+}
+
+.firework:nth-child(3) {
+  top: 60%;
+  left: 50%;
+  animation-delay: 1.4s;
+  background: #ffe66d;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(20);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(40);
+    opacity: 0;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .countdown-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .time-value {
+    font-size: 3rem;
+  }
+
+  .time-label {
+    font-size: 1rem;
+  }
+
+  .message {
+    font-size: 1.4rem;
+  }
+
+  .celebration h1 {
+    font-size: 2.5rem;
+    padding: 1rem;
+  }
+}
