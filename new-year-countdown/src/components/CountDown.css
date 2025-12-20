@@ -1,0 +1,68 @@
+.countDown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, lightgreen 0%, green 100%);
+  animation: gradientShift 10s ease infinite;
+
+  .grid {
+    display: flex;
+    gap: 2rem;
+    max-width: 800px;
+  }
+
+  .time-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1 px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .time-box:hover {
+    transform: translateY(-10px) scale(1.05);
+  }
+
+  .time-value {
+    font-size: 4rem;
+    font-weight: 800;
+    color: white;
+  }
+
+  .time-label {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  .title {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    font-weight: 800;
+    animation: pulse 2s ease-in-out infinite;
+  }
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    background: linear-gradient(135deg, lightgreen 0%, green 100%);
+  }
+  50% {
+    background: linear-gradient(135deg, rgb(246, 88, 88) 0%, red 100%);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
